@@ -34,6 +34,7 @@
 
 body {
     font-size: 1.2rem;
+    background-color: var(--bm-background-color);
 }
 
 nav {
@@ -82,8 +83,11 @@ footer img:hover {
 }
 
 .messageClass {
-    color: var(--cf-orange);
     font-size: 1rem;
+}
+
+.boldItem {
+    font-weight: bolder;
 }
 
 @media (min-width: 575.98px) {

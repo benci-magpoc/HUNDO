@@ -1,29 +1,38 @@
-function getMessage() {
-    let message = document.getElementById("txtMessage").value;
-    displayMessage(message);
+// getting the values from UI
+function getValues() {
+    let startValue = document.getElementById("startValue").value;
+    let endtValue = document.getElementById("endValue").value;
+    displayValues(startValue, endtValue);
 }
 
 
-function displayMessage(message) {
+function displayValues(start, end) {
 
-    // let item = `<li class="list-group-item">${message}</li>`;
-
-    // getting ol element from the page
+    // getting the div element from the page
     element = document.getElementById("results");
 
-    // create a new li element
-    let item = document.createElement("li");
-    //add class to the element
-    item.classList.add("list-group-item");
-    item.classList.add("messageClass");
+    for (let i = start; i <= end; i++) {
 
-    //set the message for the li element
-    item.innerHTML = message;
-    // add new item to list
-    element.appendChild(item);
+        // create a new div for results
+        let item = document.createElement("div");
+
+        if (i % 2 == 0) {
+            item.classList.add("boldItem");
+
+        }
+        item.classList.add("col-12");
+        item.classList.add("col-md-3");
 
 
-    // element.insertAdjacentHTML("beforeend", item);
-    let clearForm = document.getElementById("txtMessage");
-    clearForm.innerHTML = "";
+        //set the items to the div
+        item.innerHTML = i;
+        element.appendChild(item);
+    }
+
+    element.appendChild()
+}
+//function to cleaer numbers
+function clearList() {
+    document.getElementById("results").innerHTML = "";
+
 }
